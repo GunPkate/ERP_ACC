@@ -2,7 +2,8 @@
 AccountingERP
 
 ![image](https://user-images.githubusercontent.com/77183620/182745179-55ee46ac-c930-4503-882d-3888c4ffdf8d.png)
-
+C# WPF framework 
+MySQL server
 
 Use Case Diagram
 
