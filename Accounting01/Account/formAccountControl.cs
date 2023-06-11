@@ -47,17 +47,17 @@ namespace Accounting01.Account
             }
         }
 
-        private void FillGrid(string searchvalue) // Empty String variable take parameter from searchValue_TextChanged
+        private void FillGrid(string searchValue) // Empty String variable take parameter from searchValue_TextChanged
         {
             string query = string.Empty;
             DataTable dt = new DataTable();
-            if (string.IsNullOrEmpty(searchvalue) && string.IsNullOrWhiteSpace(searchvalue))
+            if (string.IsNullOrEmpty(searchValue) && string.IsNullOrWhiteSpace(searchValue))
             {
                 query = "Select * From AccountControl";
             }
             else
             {
-                query = "Select * From AccountControl Where AccountControlID like '%" + searchvalue + "%'";
+                query = "Select * From AccountControl Where AccountControlID like '%" + searchValue + "%'";
             }
 
             dt = DatabaseAccess.Retrieve(query);
@@ -269,7 +269,7 @@ namespace Accounting01.Account
                 }
             }
 
-            string insertquery = string.Format("insert into AccountControl(UserID, AccountControlName) values('{0}','{1}')", CurrentUser.UserID, txtAccountControl.Text.Trim());
+            string insertquery = string.Format("insert into AccountControl(UserID, AccountHeadID, AccountControlName) values('{0}','{1}','{2}');", CurrentUser.UserID, cmbAccountControl.SelectedValue , txtAccountControl.Text.Trim());
             bool result = DatabaseAccess.Insert(insertquery);
             if (result)
             {
