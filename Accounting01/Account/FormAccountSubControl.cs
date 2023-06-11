@@ -26,6 +26,7 @@ namespace Accounting01.Account
         {
             ComboHelper.FillAccountHead(cmbAccountHead);
             ComboHelper.FillAccountControl(cmbAccountControl);
+            FillGrid("");
         }
 
 
@@ -73,8 +74,9 @@ namespace Accounting01.Account
                 }
             }
 
-            string insertquery = string.Format("insert into AccounttSubControl (UserID, AccountSubControlName, AccountControlID, AccountHeadID ) values('{0}','{1}','{2}','{3}');", CurrentUser.UserID, txtAccountSubControl.Text.Trim(), cmbAccountControl.SelectedItem, cmbAccountHead.SelectedIndex);
-            MessageBox.Show(cmbAccountControl.Items[2].ToString());
+            string insertquery = string.Format("insert into AccounttSubControl (UserID, AccountSubControlName, AccountControlID, AccountHeadID ) values('{0}','{1}','{2}','{3}');", CurrentUser.UserID, txtAccountSubControl.Text.Trim(), cmbAccountControl.SelectedValue.ToString(), cmbAccountHead.SelectedIndex);
+            //MessageBox.Show(cmbAccountControl.Items[2].ToString());
+            //MessageBox.Show(cmbAccountControl.SelectedValue.ToString());
             bool result = DatabaseAccess.Insert(insertquery);
             if (result)
             {
@@ -108,9 +110,10 @@ namespace Accounting01.Account
                 if (dt.Rows.Count > 0)
                 {
                     dgvAccountSubControl.DataSource = dt;
-                    dgvAccountSubControl.Columns[0].Width = 100;
-                    dgvAccountSubControl.Columns[1].Width = 100;
-                    dgvAccountSubControl.Columns[2].Width = 100;
+                    dgvAccountSubControl.Columns[0].Width = 140;
+                    dgvAccountSubControl.Columns[1].Width = 140;
+                    dgvAccountSubControl.Columns[2].Width = 140;
+                    dgvAccountSubControl.Columns[3].Width = 140;
                 }
                 else
                 {

@@ -134,7 +134,7 @@ namespace Accounting01.Account
             this.dgvAccountSubControl.ReadOnly = true;
             this.dgvAccountSubControl.RowTemplate.Height = 25;
             this.dgvAccountSubControl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccountSubControl.Size = new System.Drawing.Size(450, 250);
+            this.dgvAccountSubControl.Size = new System.Drawing.Size(599, 250);
             this.dgvAccountSubControl.TabIndex = 58;
             // 
             // btn_Cancle
