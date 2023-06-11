@@ -173,15 +173,6 @@ namespace Accounting01.Account
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = true;
             // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(169, 129);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 54;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            // 
             // txtAccountControl
             // 
             this.txtAccountControl.Location = new System.Drawing.Point(169, 100);
