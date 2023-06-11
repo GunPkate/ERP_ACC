@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting01.Account
 {
-    partial class formAccountControl
+    partial class FormAccountControl
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Accounting01.Account
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAccountControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccountControl));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvAccountControl = new System.Windows.Forms.DataGridView();
             this.btn_Cancle = new System.Windows.Forms.Button();
@@ -213,7 +213,7 @@ namespace Accounting01.Account
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click_1);
             // 
-            // formAccountControl
+            // FormAccountControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,8 +233,8 @@ namespace Accounting01.Account
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchValue);
             this.Controls.Add(this.label1);
-            this.Name = "formAccountControl";
-            this.Text = "formAccountControl";
+            this.Name = "FormAccountControl";
+            this.Text = "FormAccountControl";
             this.Load += new System.EventHandler(this.formAccountControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccountControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();

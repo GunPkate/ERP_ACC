@@ -91,7 +91,7 @@ namespace Accounting01
 
         private void accountControlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAccountControl formAccountControl = new formAccountControl();
+            FormAccountControl formAccountControl = new FormAccountControl();
             formAccountControl.ShowDialog();
         }
     }

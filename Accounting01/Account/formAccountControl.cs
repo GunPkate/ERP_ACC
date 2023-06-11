@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Accounting01.Account
 {
-    public partial class formAccountControl : Form
+    public partial class FormAccountControl : Form
     {
-        public formAccountControl()
+        public FormAccountControl()
         {
             InitializeComponent();
         }
