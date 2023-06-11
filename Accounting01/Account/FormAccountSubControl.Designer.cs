@@ -37,7 +37,6 @@ namespace Accounting01.Account
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddAccountHead = new System.Windows.Forms.Button();
             this.btnRefreshHead = new System.Windows.Forms.Button();
-            this.cmbAccountHead = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvAccountSubControl = new System.Windows.Forms.DataGridView();
@@ -45,7 +44,7 @@ namespace Accounting01.Account
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.txtAccountControl = new System.Windows.Forms.TextBox();
+            this.txtAccountSubControl = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.searchValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace Accounting01.Account
             this.cmbAccountControl = new System.Windows.Forms.ComboBox();
             this.btnRefreshControl = new System.Windows.Forms.Button();
             this.btnAddAccountControl = new System.Windows.Forms.Button();
+            this.cmbAccountHead = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -104,14 +104,6 @@ namespace Accounting01.Account
             this.btnRefreshHead.TabIndex = 62;
             this.btnRefreshHead.UseVisualStyleBackColor = true;
             this.btnRefreshHead.Click += new System.EventHandler(this.btnRefreshHead_Click);
-            // 
-            // cmbAccountHead
-            // 
-            this.cmbAccountHead.FormattingEnabled = true;
-            this.cmbAccountHead.Location = new System.Drawing.Point(169, 15);
-            this.cmbAccountHead.Name = "cmbAccountHead";
-            this.cmbAccountHead.Size = new System.Drawing.Size(278, 23);
-            this.cmbAccountHead.TabIndex = 61;
             // 
             // label3
             // 
@@ -182,12 +174,12 @@ namespace Accounting01.Account
             this.btn_Save.Size = new System.Drawing.Size(75, 23);
             this.btn_Save.TabIndex = 64;
             // 
-            // txtAccountControl
+            // txtAccountSubControl
             // 
-            this.txtAccountControl.Location = new System.Drawing.Point(169, 100);
-            this.txtAccountControl.Name = "txtAccountControl";
-            this.txtAccountControl.Size = new System.Drawing.Size(318, 23);
-            this.txtAccountControl.TabIndex = 53;
+            this.txtAccountSubControl.Location = new System.Drawing.Point(169, 100);
+            this.txtAccountSubControl.Name = "txtAccountSubControl";
+            this.txtAccountSubControl.Size = new System.Drawing.Size(318, 23);
+            this.txtAccountSubControl.TabIndex = 53;
             // 
             // label2
             // 
@@ -253,15 +245,23 @@ namespace Accounting01.Account
             this.btnAddAccountControl.UseVisualStyleBackColor = true;
             this.btnAddAccountControl.Click += new System.EventHandler(this.btnAddAccountControl_Click);
             // 
+            // cmbAccountHead
+            // 
+            this.cmbAccountHead.FormattingEnabled = true;
+            this.cmbAccountHead.Location = new System.Drawing.Point(169, 15);
+            this.cmbAccountHead.Name = "cmbAccountHead";
+            this.cmbAccountHead.Size = new System.Drawing.Size(278, 23);
+            this.cmbAccountHead.TabIndex = 66;
+            // 
             // btnSave
             // 
-            this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(169, 129);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 65;
+            this.btnSave.TabIndex = 67;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormAccountSubControl
             // 
@@ -269,13 +269,13 @@ namespace Accounting01.Account
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.cmbAccountHead);
             this.Controls.Add(this.btnAddAccountControl);
             this.Controls.Add(this.btnAddAccountHead);
             this.Controls.Add(this.btnRefreshControl);
             this.Controls.Add(this.btnRefreshHead);
             this.Controls.Add(this.cmbAccountControl);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbAccountHead);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvAccountSubControl);
@@ -283,7 +283,7 @@ namespace Accounting01.Account
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.btn_Save);
-            this.Controls.Add(this.txtAccountControl);
+            this.Controls.Add(this.txtAccountSubControl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchValue);
             this.Controls.Add(this.label1);
@@ -306,7 +306,6 @@ namespace Accounting01.Account
         private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.Button btnAddAccountHead;
         private System.Windows.Forms.Button btnRefreshHead;
-        private System.Windows.Forms.ComboBox cmbAccountHead;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvAccountSubControl;
@@ -314,7 +313,7 @@ namespace Accounting01.Account
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button btn_Save;
-        private System.Windows.Forms.TextBox txtAccountControl;
+        private System.Windows.Forms.TextBox txtAccountSubControl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchValue;
         private System.Windows.Forms.Label label1;
@@ -322,6 +321,7 @@ namespace Accounting01.Account
         private System.Windows.Forms.Button btnRefreshControl;
         private System.Windows.Forms.ComboBox cmbAccountControl;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbAccountHead;
         private System.Windows.Forms.Button btnSave;
     }
 }

@@ -54,11 +54,11 @@ namespace Accounting01.Account
             DataTable dt = new DataTable();
             if (string.IsNullOrEmpty(searchValue) && string.IsNullOrWhiteSpace(searchValue))
             {
-                query = "Select * From AccountControl";
+                query = "Select * From v_AccountControlList";
             }
             else
             {
-                query = "Select * From AccountControl Where AccountControlID like '%" + searchValue + "%'";
+                query = "Select * From v_AccountControlList Where AccountControlID like '%" + searchValue + "%'";
             }
 
             dt = DatabaseAccess.Retrieve(query);
