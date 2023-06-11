@@ -106,6 +106,7 @@ namespace Accounting01.Account
             this.btn_Clear.TabIndex = 25;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click_1);
             // 
             // btn_Save
             // 

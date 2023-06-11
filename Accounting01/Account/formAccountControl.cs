@@ -33,6 +33,7 @@ namespace Accounting01.Account
         {
             ComboHelper.FillAccountHead(cmbAccountControl);
             btnRefresh_Click(sender, e);
+            FillGrid("");
         }
 
         private void searchValue_TextChanged(object sender, EventArgs e)
@@ -270,6 +271,9 @@ namespace Accounting01.Account
             }
 
             string insertquery = string.Format("insert into AccountControl(UserID, AccountHeadID, AccountControlName) values('{0}','{1}','{2}');", CurrentUser.UserID, cmbAccountControl.SelectedValue , txtAccountControl.Text.Trim());
+            if ((int)cmbAccountControl.SelectedValue <= 0) {
+                ep.SetError(txtAccountControl, "Invalid Account Code");
+            }
             bool result = DatabaseAccess.Insert(insertquery);
             if (result)
             {
@@ -281,6 +285,12 @@ namespace Accounting01.Account
             {
                 MessageBox.Show("Invalid");
             }
+        }
+
+        private void btn_Clear_Click_1(object sender, EventArgs e)
+        {
+            txtAccountControl.Clear();
+            cmbAccountControl.SelectedIndex = 0;
         }
     }
 }

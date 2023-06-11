@@ -45,5 +45,45 @@ namespace Accounting01.Account
         {
             ComboHelper.FillAccountControl(cmbAccountControl);
         }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FillGrid(string searchValue) // Empty String variable take parameter from searchValue_TextChanged
+        {
+            string query = string.Empty;
+            DataTable dt = new DataTable();
+            if (string.IsNullOrEmpty(searchValue) && string.IsNullOrWhiteSpace(searchValue))
+            {
+                query = "Select * From AccountSubControl";
+            }
+            else
+            {
+                query = "Select * From AccountSubControl Where AccountSubControlID like '%" + searchValue + "%'";
+            }
+
+            dt = DatabaseAccess.Retrieve(query);
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    dgvAccountSubControl.DataSource = dt;
+                    dgvAccountSubControl.Columns[0].Width = 100;
+                    dgvAccountSubControl.Columns[1].Width = 100;
+                    dgvAccountSubControl.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                else
+                {
+                    dgvAccountSubControl.DataSource = null;
+                }
+            }
+            else
+            {
+                dgvAccountSubControl.DataSource = null;
+            }
+        }
+
     }
 }

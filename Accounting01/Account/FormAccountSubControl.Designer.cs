@@ -40,7 +40,7 @@ namespace Accounting01.Account
             this.cmbAccountHead = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvAccountControl = new System.Windows.Forms.DataGridView();
+            this.dgvAccountSubControl = new System.Windows.Forms.DataGridView();
             this.btn_Cancle = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
@@ -53,9 +53,10 @@ namespace Accounting01.Account
             this.cmbAccountControl = new System.Windows.Forms.ComboBox();
             this.btnRefreshControl = new System.Windows.Forms.Button();
             this.btnAddAccountControl = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountSubControl)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteToolStripMenuItem
@@ -129,20 +130,20 @@ namespace Accounting01.Account
             this.panel1.Size = new System.Drawing.Size(450, 21);
             this.panel1.TabIndex = 59;
             // 
-            // dgvAccountControl
+            // dgvAccountSubControl
             // 
-            this.dgvAccountControl.AllowUserToAddRows = false;
-            this.dgvAccountControl.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvAccountControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccountControl.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgvAccountControl.Location = new System.Drawing.Point(37, 227);
-            this.dgvAccountControl.MultiSelect = false;
-            this.dgvAccountControl.Name = "dgvAccountControl";
-            this.dgvAccountControl.ReadOnly = true;
-            this.dgvAccountControl.RowTemplate.Height = 25;
-            this.dgvAccountControl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccountControl.Size = new System.Drawing.Size(450, 250);
-            this.dgvAccountControl.TabIndex = 58;
+            this.dgvAccountSubControl.AllowUserToAddRows = false;
+            this.dgvAccountSubControl.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvAccountSubControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccountSubControl.GridColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgvAccountSubControl.Location = new System.Drawing.Point(37, 227);
+            this.dgvAccountSubControl.MultiSelect = false;
+            this.dgvAccountSubControl.Name = "dgvAccountSubControl";
+            this.dgvAccountSubControl.ReadOnly = true;
+            this.dgvAccountSubControl.RowTemplate.Height = 25;
+            this.dgvAccountSubControl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAccountSubControl.Size = new System.Drawing.Size(450, 250);
+            this.dgvAccountSubControl.TabIndex = 58;
             // 
             // btn_Cancle
             // 
@@ -163,6 +164,7 @@ namespace Accounting01.Account
             this.btn_Update.TabIndex = 56;
             this.btn_Update.Text = "Update";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Clear
             // 
@@ -172,6 +174,13 @@ namespace Accounting01.Account
             this.btn_Clear.TabIndex = 55;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = true;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(0, 0);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save.TabIndex = 64;
             // 
             // txtAccountControl
             // 
@@ -244,11 +253,22 @@ namespace Accounting01.Account
             this.btnAddAccountControl.UseVisualStyleBackColor = true;
             this.btnAddAccountControl.Click += new System.EventHandler(this.btnAddAccountControl_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(169, 129);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 65;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // FormAccountSubControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAddAccountControl);
             this.Controls.Add(this.btnAddAccountHead);
             this.Controls.Add(this.btnRefreshControl);
@@ -258,7 +278,7 @@ namespace Accounting01.Account
             this.Controls.Add(this.cmbAccountHead);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvAccountControl);
+            this.Controls.Add(this.dgvAccountSubControl);
             this.Controls.Add(this.btn_Cancle);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Clear);
@@ -272,7 +292,7 @@ namespace Accounting01.Account
             this.Load += new System.EventHandler(this.FormAccountSubControl_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountSubControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +309,7 @@ namespace Accounting01.Account
         private System.Windows.Forms.ComboBox cmbAccountHead;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvAccountControl;
+        private System.Windows.Forms.DataGridView dgvAccountSubControl;
         private System.Windows.Forms.Button btn_Cancle;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Clear;
@@ -302,5 +322,6 @@ namespace Accounting01.Account
         private System.Windows.Forms.Button btnRefreshControl;
         private System.Windows.Forms.ComboBox cmbAccountControl;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSave;
     }
 }
