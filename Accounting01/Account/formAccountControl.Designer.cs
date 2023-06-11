@@ -86,6 +86,7 @@ namespace Accounting01.Account
             this.btn_Cancle.TabIndex = 27;
             this.btn_Cancle.Text = "Cancle";
             this.btn_Cancle.UseVisualStyleBackColor = true;
+            this.btn_Cancle.Click += new System.EventHandler(this.btn_Cancle_Click_1);
             // 
             // btn_Update
             // 
@@ -206,13 +207,14 @@ namespace Accounting01.Account
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click_1);
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // FormAccountControl
             // 

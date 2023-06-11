@@ -164,27 +164,7 @@ namespace Accounting01.Account
             }
         }
 
-        private void EnableBtn()
-        {
-            //btn.Enabled = true;
-            btn_Cancle.Enabled = true;
-            btn_Save.Enabled = false;
-            dgvAccountControl.Enabled = false;
-            searchValue.Enabled = false;
-        }
-
-        private void DisableBtn()
-        {
-            //btn_Edit.Enabled = false;
-            btn_Cancle.Enabled = false;
-            btn_Save.Enabled = true;
-            dgvAccountControl.Enabled = true;
-            searchValue.Enabled = true;
-            FillGrid("");
-            txtAccountControl.Clear();
-        }
-
-        private void deleteToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvAccountControl != null)
             {
@@ -237,16 +217,45 @@ namespace Accounting01.Account
             }
         }
 
-        private void btn_Cancle_Click(object sender, EventArgs e)
+        private void btn_Update_Click(object sender, EventArgs e)
         {
-            DisableBtn();
+            ep.Clear();
+            if (txtAccountControl.Text.Trim().Length == 0)
+            {
+                ep.SetError(txtAccountControl, "Please Enter Account");
+                txtAccountControl.Focus();
+                return;
+            }
+
+            DataTable dt = DatabaseAccess.Retrieve("select * from AccountControl  where AccountHeadID =" + dgvAccountControl.CurrentRow.Cells[0].Value + "'  and AccountControlName = " +  txtAccountControl.Text.Trim() );
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    ep.SetError(txtAccountControl, "Already Exist");
+                    txtAccountControl.Focus();
+                    return;
+                }
+            }
+
+            string updatequery = string.Format("Update AccountControl set AccountHeadID = '{0}', AccountControlName = '{1}' where AccountControlID = '{2}'", cmbAccountControl.SelectedIndex, txtAccountControl.Text.Trim(), dgvAccountControl.CurrentRow.Cells[0].Value);
+            bool result = DatabaseAccess.Update(updatequery);
+            if (result)
+            {
+                MessageBox.Show("Account Updated");
+                DisableBtn();
+            }
+            else
+            {
+                MessageBox.Show("Invalid");
+            }
+
         }
 
 
-
-        private void btn_Update_Click(object sender, EventArgs e)
+        private void btn_Cancle_Click_1(object sender, EventArgs e)
         {
-
+            DisableBtn();
         }
 
         private void btn_Save_Click_1(object sender, EventArgs e)
@@ -292,5 +301,50 @@ namespace Accounting01.Account
             txtAccountControl.Clear();
             cmbAccountControl.SelectedIndex = 0;
         }
+
+
+        private void EnableComponents()
+        {
+            btn_Update.Enabled = true;
+            btn_Cancle.Enabled = true;
+            btn_Save.Enabled = false;
+            dgvAccountControl.Enabled = false;
+            searchValue.Enabled = false;
+        }
+
+        private void DisableBtn()
+        {
+            btn_Update.Enabled = false;
+            btn_Cancle.Enabled = false;
+            btn_Save.Enabled = true;
+            dgvAccountControl.Enabled = true;
+            searchValue.Enabled = true;
+            FillGrid("");
+            txtAccountControl.Clear();
+        }
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAccountControl != null)
+            {
+                if (dgvAccountControl.Rows.Count > 0)
+                {
+                    if (dgvAccountControl.SelectedRows.Count == 1)
+                    {
+                        txtAccountControl.Text = Convert.ToString(dgvAccountControl.CurrentRow.Cells[3].Value);
+                        EnableComponents();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Row");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("List is Empty ");
+                }
+            }
+        }
     }
+
+
 }
