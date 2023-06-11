@@ -43,6 +43,7 @@ namespace Accounting01
             this.addUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acountSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountHeadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporttToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnLogin = new System.Windows.Forms.ToolStripButton();
@@ -51,7 +52,7 @@ namespace Accounting01
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelParent = new System.Windows.Forms.Panel();
-            this.accountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountSubControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripAll.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -149,7 +150,8 @@ namespace Accounting01
             // 
             this.acountSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountHeadToolStripMenuItem,
-            this.accountControlToolStripMenuItem});
+            this.accountControlToolStripMenuItem,
+            this.accountSubControlToolStripMenuItem});
             this.acountSettingToolStripMenuItem.Name = "acountSettingToolStripMenuItem";
             this.acountSettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acountSettingToolStripMenuItem.Text = "Acount Setting";
@@ -157,9 +159,16 @@ namespace Accounting01
             // accountHeadToolStripMenuItem
             // 
             this.accountHeadToolStripMenuItem.Name = "accountHeadToolStripMenuItem";
-            this.accountHeadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accountHeadToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.accountHeadToolStripMenuItem.Text = "Account Head";
             this.accountHeadToolStripMenuItem.Click += new System.EventHandler(this.accountHeadToolStripMenuItem_Click);
+            // 
+            // accountControlToolStripMenuItem
+            // 
+            this.accountControlToolStripMenuItem.Name = "accountControlToolStripMenuItem";
+            this.accountControlToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.accountControlToolStripMenuItem.Text = "Account Control";
+            this.accountControlToolStripMenuItem.Click += new System.EventHandler(this.accountControlToolStripMenuItem_Click);
             // 
             // reporttToolStripMenuItem
             // 
@@ -231,12 +240,12 @@ namespace Accounting01
             this.panelParent.Size = new System.Drawing.Size(800, 366);
             this.panelParent.TabIndex = 3;
             // 
-            // accountControlToolStripMenuItem
+            // accountSubControlToolStripMenuItem
             // 
-            this.accountControlToolStripMenuItem.Name = "accountControlToolStripMenuItem";
-            this.accountControlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.accountControlToolStripMenuItem.Text = "Account Control";
-            this.accountControlToolStripMenuItem.Click += new System.EventHandler(this.accountControlToolStripMenuItem_Click);
+            this.accountSubControlToolStripMenuItem.Name = "accountSubControlToolStripMenuItem";
+            this.accountSubControlToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.accountSubControlToolStripMenuItem.Text = "Account Sub Control";
+            this.accountSubControlToolStripMenuItem.Click += new System.EventHandler(this.accountSubControlToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -286,5 +295,6 @@ namespace Accounting01
         private System.Windows.Forms.ToolStripMenuItem acountSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountHeadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountControlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountSubControlToolStripMenuItem;
     }
 }

@@ -108,5 +108,38 @@ namespace Accounting01.SourceCode
 
         }
 
+        public static void FillAccountControl(ComboBox cmb)
+        {
+            DataTable dtAccountControlID = new DataTable();
+            dtAccountControlID.Columns.Add("AccountControlID");
+            dtAccountControlID.Columns.Add("AccountControlName");
+            dtAccountControlID.Rows.Add("0", "---Select---");
+
+            try
+            {
+                DataTable dt = DatabaseAccess.Retrieve("Select * From AccountControl");
+                if (dt != null)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow AccountControl in dt.Rows)
+                        {
+                            dtAccountControlID.Rows.Add(AccountControl["AccountControlID"], AccountControl["AccountControlName"]);
+                        }
+                    }
+                }
+
+                cmb.DataSource = dtAccountControlID;
+                cmb.ValueMember = "AccountControlID"; //Display as index value
+                cmb.DisplayMember = "AccountControlName"; //display value
+
+            }
+            catch (Exception)
+            {
+                cmb.DataSource = dtAccountControlID;
+            }
+
+        }
+
     }
 }
