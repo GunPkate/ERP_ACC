@@ -31,9 +31,6 @@ namespace Accounting01.Account
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccountSubControl));
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddAccountHead = new System.Windows.Forms.Button();
             this.btnRefreshHead = new System.Windows.Forms.Button();
@@ -43,7 +40,6 @@ namespace Accounting01.Account
             this.btn_Cancle = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
             this.txtAccountSubControl = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.searchValue = new System.Windows.Forms.TextBox();
@@ -54,30 +50,13 @@ namespace Accounting01.Account
             this.btnAddAccountControl = new System.Windows.Forms.Button();
             this.cmbAccountHead = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccountSubControl)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
             // 
             // ep
             // 
@@ -146,6 +125,7 @@ namespace Accounting01.Account
             this.btn_Cancle.TabIndex = 57;
             this.btn_Cancle.Text = "Cancle";
             this.btn_Cancle.UseVisualStyleBackColor = true;
+            this.btn_Cancle.Click += new System.EventHandler(this.btn_Cancle_Click);
             // 
             // btn_Update
             // 
@@ -166,13 +146,7 @@ namespace Accounting01.Account
             this.btn_Clear.TabIndex = 55;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = true;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(0, 0);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 64;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // txtAccountSubControl
             // 
@@ -263,11 +237,34 @@ namespace Accounting01.Account
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // FormAccountSubControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbAccountHead);
             this.Controls.Add(this.btnAddAccountControl);
@@ -282,7 +279,6 @@ namespace Accounting01.Account
             this.Controls.Add(this.btn_Cancle);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Clear);
-            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.txtAccountSubControl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchValue);
@@ -290,19 +286,15 @@ namespace Accounting01.Account
             this.Name = "FormAccountSubControl";
             this.Text = "FormAccountSubControl";
             this.Load += new System.EventHandler(this.FormAccountSubControl_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccountSubControl)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.Button btnAddAccountHead;
         private System.Windows.Forms.Button btnRefreshHead;
@@ -312,7 +304,6 @@ namespace Accounting01.Account
         private System.Windows.Forms.Button btn_Cancle;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Clear;
-        private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TextBox txtAccountSubControl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchValue;
@@ -323,5 +314,8 @@ namespace Accounting01.Account
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbAccountHead;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

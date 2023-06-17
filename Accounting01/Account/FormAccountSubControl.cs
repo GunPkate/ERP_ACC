@@ -136,7 +136,9 @@ namespace Accounting01.Account
                 {
                     if (dgvAccountSubControl.SelectedRows.Count == 1)
                     {
-                        txtAccountSubControl.Text = Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[2].Value);
+                        txtAccountSubControl.Text = Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[1].Value).Trim();
+                        cmbAccountControl.Text = Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[2].Value).Trim();
+                        cmbAccountHead.Text = Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[3].Value).Trim();
                         EnableComponents();
                     }
                     else
@@ -155,7 +157,7 @@ namespace Accounting01.Account
         {
             btn_Update.Enabled = true;
             btn_Cancle.Enabled = true;
-            btn_Save.Enabled = false;
+            btnSave.Enabled = false;
             dgvAccountSubControl.Enabled = false;
             searchValue.Enabled = false;
         }
@@ -164,7 +166,7 @@ namespace Accounting01.Account
         {
             btn_Update.Enabled = false;
             btn_Cancle.Enabled = false;
-            btn_Save.Enabled = true;
+            btnSave.Enabled = true;
             dgvAccountSubControl.Enabled = true;
             searchValue.Enabled = true;
             FillGrid("");
@@ -191,7 +193,7 @@ namespace Accounting01.Account
                 return;
             }
 
-            DataTable dt = DatabaseAccess.Retrieve("select * from AccountHead where AccountHeadName = '" + txtAccountSubControl.Text + "'  where ACC_ID =" + dgvAccountSubControl.CurrentRow.Cells[0].Value);
+            DataTable dt = DatabaseAccess.Retrieve("select * from AccountSubControl where AccountSubControlName = '" + txtAccountSubControl.Text + "'  where ACC_ID =" + dgvAccountSubControl.CurrentRow.Cells[0].Value);
             if (dt != null)
             {
                 if (dt.Rows.Count > 0)
@@ -202,7 +204,15 @@ namespace Accounting01.Account
                 }
             }
 
-            string updatequery = string.Format("Update AccountHead set UserID = '{0}', AccountHeadName = '{1}' where AccountHeadID = '{2}'", CurrentUser.UserID, txtAccountSubControl.Text.Trim(), dgvAccountSubControl.CurrentRow.Cells[0].Value);
+            string updatequery = string.Format("Update AccountSubControl set UserID = '{0}', AccountSubControlName = '{1}', " +
+                "AccountControlID = (select AccountControlID from AccountControl where AccountControlName =  '{2}') ," +
+                " AccountHeadID = (select AccountHeadID  from AccountHead where AccountHeadName = '{3}')  where AccountSubControlID = '{4}'", 
+                CurrentUser.UserID, 
+                txtAccountSubControl.Text.Trim(),
+                Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[2].Value).Trim(),
+                Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[3].Value).Trim(),
+                Convert.ToString(dgvAccountSubControl.CurrentRow.Cells[0].Value).Trim()
+            );
             bool result = DatabaseAccess.Update(updatequery);
             if (result)
             {
