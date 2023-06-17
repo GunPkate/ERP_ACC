@@ -101,9 +101,9 @@ namespace Accounting01.Account
             }
             else
             {
-                query = "select * from v_AccountSubControlList where (ACC_name+' '+UserName+' '+CAST(Acc_ID AS varchar)) like '%" + searchvalue + "%'";
-            }
-
+                query = "select * from v_AccountSubControlList where (AccountSubControlName+' '+AccountControlName+' '+AccountHeadName)  like '%" + searchvalue + "%'";
+            }                                                         
+                                                                      
             dt = DatabaseAccess.Retrieve(query);
             if (dt != null)
             {
@@ -285,6 +285,11 @@ namespace Accounting01.Account
                     MessageBox.Show("List is Empty ");
                 }
             }
+        }
+
+        private void searchValue_TextChanged_1(object sender, EventArgs e)
+        {
+            FillGrid(searchValue.Text.Trim());
         }
     }
 }

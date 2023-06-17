@@ -170,6 +170,7 @@ namespace Accounting01.Account
             this.searchValue.Name = "searchValue";
             this.searchValue.Size = new System.Drawing.Size(318, 23);
             this.searchValue.TabIndex = 51;
+            this.searchValue.TextChanged += new System.EventHandler(this.searchValue_TextChanged_1);
             // 
             // label1
             // 
