@@ -102,10 +102,10 @@ namespace Accounting01.Account
                 if (dt.Rows.Count > 0)
                 {
                     dgvFinancial.DataSource = dt;
-                    dgvFinancial.Columns[0].Width = 140;
-                    dgvFinancial.Columns[1].Width = 140;
-                    dgvFinancial.Columns[2].Width = 140;
-                    dgvFinancial.Columns[3].Width = 140;
+                    dgvFinancial.Columns[0].Width = 120;
+                    dgvFinancial.Columns[1].Width = 120;
+                    dgvFinancial.Columns[2].Width = 120;
+                    dgvFinancial.Columns[3].Width = 120;
                 }
                 else
                 {
@@ -160,6 +160,36 @@ namespace Accounting01.Account
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+                        ep.Clear();
+            if (txtFinancial.Text.Trim().Length == 0)
+            {
+                ep.SetError(txtFinancial, "Please Enter Account");
+                txtFinancial.Focus();
+                return;
+            }
+
+            DataTable dt = DatabaseAccess.Retrieve("select * from FinancialYear where FinancialYear = '" + txtFinancial.Text + "' and StartDate = '" + dateTimePicker1.Value + ';');
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    ep.SetError(txtFinancial, "Already Exist");
+                    txtFinancial.Focus();
+                    return;
+                }
+            }
+
+            string updatequery = string.Format("Update FinancialYear set FinancialYear = '{0}', StartDate = '{1}', EndDate = DateAdd(YY,1,'{2}'), IsActive = '{3}' where FinancialYearID = '{4}' ; ", txtFinancial.Text.Trim(), dateTimePicker1.Value.ToString("yyyy/MM/dd"), dateTimePicker1.Value.ToString("yyyy/MM/dd"), checkActive.Checked, dgvFinancial.CurrentRow.Cells[0].Value);
+            bool result = DatabaseAccess.Update(updatequery);
+            if (result)
+            {
+                MessageBox.Show("Account Updated");
+                DisableBtn();
+            }
+            else
+            {
+                MessageBox.Show("Invalid");
+            }
 
         }
 
@@ -216,6 +246,7 @@ namespace Accounting01.Account
                     if (dgvFinancial.SelectedRows.Count == 1)
                     {
                         txtFinancial.Text = Convert.ToString(dgvFinancial.CurrentRow.Cells[1].Value);
+                        //dateTimePicker1.Value = dgvFinancial.CurrentRow.Cells[1].Value;
                         EnableComponents();
                     }
                     else
