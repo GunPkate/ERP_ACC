@@ -100,5 +100,11 @@ namespace Accounting01
             FormAccountSubControl formAccountSubControl = new FormAccountSubControl();
             formAccountSubControl.ShowDialog();
         }
+
+        private void financialYearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFinancialYear formFinancialYear = new FormFinancialYear();
+            formFinancialYear.ShowDialog();
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace Accounting01
             this.acountSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountHeadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountSubControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporttToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnLogin = new System.Windows.Forms.ToolStripButton();
@@ -52,7 +53,8 @@ namespace Accounting01
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelParent = new System.Windows.Forms.Panel();
-            this.accountSubControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financialYearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripAll.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -129,7 +131,7 @@ namespace Accounting01
             this.userTypesToolStripMenuItem,
             this.addUsersToolStripMenuItem});
             this.userSettingToolStripMenuItem.Name = "userSettingToolStripMenuItem";
-            this.userSettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userSettingToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.userSettingToolStripMenuItem.Text = "User Setting";
             // 
             // userTypesToolStripMenuItem
@@ -151,7 +153,8 @@ namespace Accounting01
             this.acountSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountHeadToolStripMenuItem,
             this.accountControlToolStripMenuItem,
-            this.accountSubControlToolStripMenuItem});
+            this.accountSubControlToolStripMenuItem,
+            this.financialYearToolStripMenuItem});
             this.acountSettingToolStripMenuItem.Name = "acountSettingToolStripMenuItem";
             this.acountSettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acountSettingToolStripMenuItem.Text = "Acount Setting";
@@ -170,8 +173,17 @@ namespace Accounting01
             this.accountControlToolStripMenuItem.Text = "Account Control";
             this.accountControlToolStripMenuItem.Click += new System.EventHandler(this.accountControlToolStripMenuItem_Click);
             // 
+            // accountSubControlToolStripMenuItem
+            // 
+            this.accountSubControlToolStripMenuItem.Name = "accountSubControlToolStripMenuItem";
+            this.accountSubControlToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.accountSubControlToolStripMenuItem.Text = "Account Sub Control";
+            this.accountSubControlToolStripMenuItem.Click += new System.EventHandler(this.accountSubControlToolStripMenuItem_Click);
+            // 
             // reporttToolStripMenuItem
             // 
+            this.reporttToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportToolStripMenuItem});
             this.reporttToolStripMenuItem.Name = "reporttToolStripMenuItem";
             this.reporttToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reporttToolStripMenuItem.Text = "Report";
@@ -240,12 +252,18 @@ namespace Accounting01
             this.panelParent.Size = new System.Drawing.Size(800, 366);
             this.panelParent.TabIndex = 3;
             // 
-            // accountSubControlToolStripMenuItem
+            // reportToolStripMenuItem
             // 
-            this.accountSubControlToolStripMenuItem.Name = "accountSubControlToolStripMenuItem";
-            this.accountSubControlToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.accountSubControlToolStripMenuItem.Text = "Account Sub Control";
-            this.accountSubControlToolStripMenuItem.Click += new System.EventHandler(this.accountSubControlToolStripMenuItem_Click);
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportToolStripMenuItem.Text = "Report";
+            // 
+            // financialYearToolStripMenuItem
+            // 
+            this.financialYearToolStripMenuItem.Name = "financialYearToolStripMenuItem";
+            this.financialYearToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.financialYearToolStripMenuItem.Text = "FinancialYear";
+            this.financialYearToolStripMenuItem.Click += new System.EventHandler(this.financialYearToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -296,5 +314,7 @@ namespace Accounting01
         private System.Windows.Forms.ToolStripMenuItem accountHeadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountControlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountSubControlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem financialYearToolStripMenuItem;
     }
 }
