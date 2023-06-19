@@ -56,6 +56,7 @@ namespace Accounting01
             this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter user type";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // searchValue
             // 
@@ -73,6 +74,7 @@ namespace Accounting01
             this.label2.Size = new System.Drawing.Size(42, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Search";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtUserTypes
             // 
@@ -80,6 +82,7 @@ namespace Accounting01
             this.txtUserTypes.Name = "txtUserTypes";
             this.txtUserTypes.Size = new System.Drawing.Size(318, 23);
             this.txtUserTypes.TabIndex = 3;
+            this.txtUserTypes.TextChanged += new System.EventHandler(this.txtUserTypes_TextChanged);
             // 
             // btn_Save
             // 
@@ -137,6 +140,7 @@ namespace Accounting01
             this.dgvUserType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUserType.Size = new System.Drawing.Size(666, 250);
             this.dgvUserType.TabIndex = 8;
+            this.dgvUserType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserType_CellContentClick);
             // 
             // panel1
             // 
@@ -145,6 +149,7 @@ namespace Accounting01
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(411, 21);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // ep
             // 
@@ -155,12 +160,13 @@ namespace Accounting01
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 26);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.editToolStripMenuItem.Text = "edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click_1);
             // 

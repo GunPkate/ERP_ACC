@@ -1,6 +1,7 @@
 ﻿using Accounting01.Account;
 using Accounting01.Product;
 using Accounting01.StockForm;
+using Accounting01.SupplierAndCustomer;
 using Accounting01.UserForm;
 using System;
 using System.Collections.Generic;
@@ -105,6 +106,12 @@ namespace Accounting01
         {
             FormFinancialYear formFinancialYear = new FormFinancialYear();
             formFinancialYear.ShowDialog();
+        }
+
+        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSupplier formSupplier = new FormSupplier();
+            formSupplier.ShowDialog();
         }
     }
 }
