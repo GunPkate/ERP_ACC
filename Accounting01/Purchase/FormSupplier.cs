@@ -150,7 +150,7 @@ namespace Accounting01.SupplierAndCustomer
                 }
             }
 
-            string query = string.Format("Update Supplier set SupplierName = '{0}' ,ContactNo = '{1}',,Email= '{2}',Address='{3}' Description = '{4}' where SupplierID = '{5}')", 
+            string query = string.Format("Update Supplier set SupplierName = '{0}' ,ContactNo = '{1}', Email= '{2}',Address='{3}', Description = '{4}' where SupplierID = '{5}';", 
                 txtSupplier.Text.Trim(), 
                 txtContact.Text.Trim(),
                 txtEmail.Text.Trim(), 
@@ -169,6 +169,7 @@ namespace Accounting01.SupplierAndCustomer
             {
                 MessageBox.Show("Update  Fail");
             }
+            FillGrid("");
         }
 
         private void btn_Cancle_Click(object sender, EventArgs e)
@@ -211,8 +212,11 @@ namespace Accounting01.SupplierAndCustomer
                 {
                     if (dgvSupplier.SelectedRows.Count == 1)
                     {
-                        txtSupplier.Text = Convert.ToString(dgvSupplier.CurrentRow.Cells[1].Value);
-                        //dateTimePicker1.Value = dgvSupplier.CurrentRow.Cells[1].Value;
+                        txtSupplier.Text = Convert.ToString(dgvSupplier.CurrentRow.Cells[1].Value).Trim();
+                        txtContact.Text = Convert.ToString(dgvSupplier.CurrentRow.Cells[2].Value).Trim();
+                        textBoxAddress.Text = Convert.ToString(dgvSupplier.CurrentRow.Cells[3].Value).Trim();
+                        txtEmail.Text = Convert.ToString(dgvSupplier.CurrentRow.Cells[4].Value).Trim();
+                        textBoxDescription.Text = Convert.ToString(dgvSupplier.CurrentRow.Cells[5].Value).Trim();
                         EnableComponents();
                     }
                     else
