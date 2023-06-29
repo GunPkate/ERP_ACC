@@ -64,12 +64,15 @@ namespace Accounting01.Purchase
         private void btn_Save_Click(object sender, EventArgs e)
         {
             ep.Clear();
-            if (txtCustomer.Text.Trim().Length == 0)
+            checkError = "No";
+            checkTextValue(txtContact);
+            checkTextValue(txtCustomer);
+            checkTextValue(txtEmail);
+            if (checkError == "Yes")
             {
-                ep.SetError(txtCustomer, "Please Enter Customer");
-                txtCustomer.Focus();
                 return;
             }
+
             DataTable dt = new DataTable();
             dt = DatabaseAccess.Retrieve("Select * From Customer where CustomerName ='" + txtCustomer.Text.Trim() + "'");
             if (dt != null)
@@ -131,25 +134,27 @@ namespace Accounting01.Purchase
             txtCustomer.Clear();
         }
 
-        private void checkTextValue() { 
-        
+        String checkError = "";
+        private void checkTextValue(TextBox textValue) {
+            if (textValue.Text.Trim().Length == 0)
+            {
+                ep.SetError(textValue, "Please Enter Customer");
+                textValue.Focus();
+                checkError = "Yes";
+            }
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             ep.Clear();
-            if (txtCustomer.Text.Trim().Length == 0)
-            {
-                ep.SetError(txtCustomer, "Please Enter Customer");
-                txtCustomer.Focus();
+            checkError = "No";
+            checkTextValue(txtContact);
+            checkTextValue(txtCustomer);
+            checkTextValue(txtEmail);
+            if (checkError == "Yes") {
                 return;
             }
-            if (txtContact.Text.Trim().Length == 0)
-            {
-                ep.SetError(txtContact, "Please Enter Customer");
-                txtContact.Focus();
-                return;
-            }
+
 
             DataTable dt = new DataTable();
             dt = DatabaseAccess.Retrieve("Select * From Customer where CustomerName='" + txtCustomer.Text.Trim() + "'and CustomerID ='" + Convert.ToSingle(dgvCustomer.CurrentRow.Cells[0].Value) + "' ");
@@ -261,7 +266,7 @@ namespace Accounting01.Purchase
                     {
                         if (MessageBox.Show("Do you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            bool result = DatabaseAccess.Delete("Delete from AccountHead where AccountHeadID = '" + dgvCustomer.CurrentRow.Cells[0].Value + "' ");
+                            bool result = DatabaseAccess.Delete("Delete from Customer where CustomerID = '" + dgvCustomer.CurrentRow.Cells[0].Value + "' ");
                             if (result)
                             {
                                 MessageBox.Show("Delete Successful");
