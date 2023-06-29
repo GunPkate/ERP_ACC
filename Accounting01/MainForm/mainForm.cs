@@ -2,6 +2,7 @@
 using Accounting01.Product;
 using Accounting01.StockForm;
 using Accounting01.SupplierAndCustomer;
+using Accounting01.Purchase;
 using Accounting01.UserForm;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,12 @@ namespace Accounting01
         {
             FormSupplier formSupplier = new FormSupplier();
             formSupplier.ShowDialog();
+        }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCustomer formCustomer = new FormCustomer();
+            formCustomer.ShowDialog();
         }
     }
 }
