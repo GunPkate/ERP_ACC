@@ -251,7 +251,7 @@ namespace Accounting01.SupplierAndCustomer
                     {
                         if (MessageBox.Show("Do you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            bool result = DatabaseAccess.Delete("Delete from AccountHead where AccountHeadID = '" + dgvSupplier.CurrentRow.Cells[0].Value + "' ");
+                            bool result = DatabaseAccess.Delete("Delete from Supplier where SupplierID = '" + dgvSupplier.CurrentRow.Cells[0].Value + "' ");
                             if (result)
                             {
                                 MessageBox.Show("Delete Successful");
