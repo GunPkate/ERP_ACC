@@ -83,7 +83,7 @@ namespace Accounting01.SupplierAndCustomer
                 }
             }
 
-            string query = string.Format("Insert into Supplier (SupplierName,ContactNo,Email,Address,Description) values('{0}','{1}','{2}','{3}','{4}';)", txtSupplier.Text.Trim(),txtContact.Text.Trim(), txtEmail.Text.Trim(), textBoxAddress.Text.Trim(), textBoxDescription.Text.Trim());
+            string query = string.Format("Insert into Supplier (SupplierName,ContactNo,Email,Address,Description) values('{0}','{1}','{2}','{3}','{4}');", txtSupplier.Text.Trim(),txtContact.Text.Trim(), txtEmail.Text.Trim(), textBoxAddress.Text.Trim(), textBoxDescription.Text.Trim());
             bool result = DatabaseAccess.Insert(query);
             if (result)
             {
@@ -104,6 +104,10 @@ namespace Accounting01.SupplierAndCustomer
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             txtSupplier.Clear();
+            txtContact.Clear();
+            txtEmail.Clear();
+            textBoxAddress.Clear();
+            textBoxDescription.Clear();
         }
 
 
@@ -169,6 +173,11 @@ namespace Accounting01.SupplierAndCustomer
             {
                 MessageBox.Show("Update  Fail");
             }
+            txtSupplier.Clear();
+            txtContact.Clear();
+            txtEmail.Clear();
+            textBoxAddress.Clear();
+            textBoxDescription.Clear();
             FillGrid("");
         }
 
