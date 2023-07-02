@@ -13,6 +13,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Report\CustomerReport.cs">
+      <SubType>Component</SubType>
+      <DependentUpon>CustomerReport.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Report\SupplierReport.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -39,6 +45,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Report\CustomerReport.rpt">
+      <LastGenOutput>CustomerReport.cs</LastGenOutput>
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </None>
     <None Update="Report\SupplierReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SupplierReport.cs</LastGenOutput>

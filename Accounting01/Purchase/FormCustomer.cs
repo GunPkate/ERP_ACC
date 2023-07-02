@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounting01.Report;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -295,7 +296,7 @@ namespace Accounting01.Purchase
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
-
+            CustomerReport customerReport = new CustomerReport();
         }
     }
 }

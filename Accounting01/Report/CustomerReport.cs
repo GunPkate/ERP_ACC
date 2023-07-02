@@ -19,6 +19,8 @@ namespace Accounting01.Report {
     public class CustomerReport : ReportClass {
         
         public CustomerReport() {
+            ReportDocument report = new ReportDocument();
+            report.Load("../Report/CustomerReport.rpt");
         }
         
         public override string ResourceName {
