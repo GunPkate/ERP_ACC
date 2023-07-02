@@ -29,267 +29,277 @@ namespace Accounting01.SupplierAndCustomer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvSupplier = new System.Windows.Forms.DataGridView();
-            this.btn_Cancle = new System.Windows.Forms.Button();
-            this.btn_Edit = new System.Windows.Forms.Button();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.txtContact = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.searchValue = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtSupplier = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            components=new System.ComponentModel.Container();
+            panel1=new System.Windows.Forms.Panel();
+            dgvSupplier=new System.Windows.Forms.DataGridView();
+            btn_Cancle=new System.Windows.Forms.Button();
+            btn_Edit=new System.Windows.Forms.Button();
+            btn_Clear=new System.Windows.Forms.Button();
+            btn_Save=new System.Windows.Forms.Button();
+            txtContact=new System.Windows.Forms.TextBox();
+            label2=new System.Windows.Forms.Label();
+            searchValue=new System.Windows.Forms.TextBox();
+            label1=new System.Windows.Forms.Label();
+            ep=new System.Windows.Forms.ErrorProvider(components);
+            contextMenuStrip1=new System.Windows.Forms.ContextMenuStrip(components);
+            editToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            deleteToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            label3=new System.Windows.Forms.Label();
+            txtEmail=new System.Windows.Forms.TextBox();
+            txtSupplier=new System.Windows.Forms.TextBox();
+            label4=new System.Windows.Forms.Label();
+            label5=new System.Windows.Forms.Label();
+            textBoxDescription=new System.Windows.Forms.TextBox();
+            textBoxAddress=new System.Windows.Forms.TextBox();
+            label6=new System.Windows.Forms.Label();
+            label7=new System.Windows.Forms.Label();
+            btn_Print=new System.Windows.Forms.Button();
+            backgroundWorker1=new System.ComponentModel.BackgroundWorker();
+            ((System.ComponentModel.ISupportInitialize)dgvSupplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ep).BeginInit();
+            contextMenuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(67, 159);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(411, 21);
-            this.panel1.TabIndex = 19;
+            panel1.BackColor=System.Drawing.SystemColors.ActiveCaption;
+            panel1.Location=new System.Drawing.Point(67, 159);
+            panel1.Name="panel1";
+            panel1.Size=new System.Drawing.Size(411, 21);
+            panel1.TabIndex=19;
             // 
             // dgvSupplier
             // 
-            this.dgvSupplier.AllowUserToAddRows = false;
-            this.dgvSupplier.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupplier.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgvSupplier.Location = new System.Drawing.Point(67, 225);
-            this.dgvSupplier.MultiSelect = false;
-            this.dgvSupplier.Name = "dgvSupplier";
-            this.dgvSupplier.ReadOnly = true;
-            this.dgvSupplier.RowTemplate.Height = 25;
-            this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSupplier.Size = new System.Drawing.Size(666, 213);
-            this.dgvSupplier.TabIndex = 18;
+            dgvSupplier.AllowUserToAddRows=false;
+            dgvSupplier.BackgroundColor=System.Drawing.SystemColors.ButtonHighlight;
+            dgvSupplier.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSupplier.GridColor=System.Drawing.SystemColors.ButtonShadow;
+            dgvSupplier.Location=new System.Drawing.Point(67, 225);
+            dgvSupplier.MultiSelect=false;
+            dgvSupplier.Name="dgvSupplier";
+            dgvSupplier.ReadOnly=true;
+            dgvSupplier.RowTemplate.Height=25;
+            dgvSupplier.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvSupplier.Size=new System.Drawing.Size(666, 213);
+            dgvSupplier.TabIndex=18;
             // 
             // btn_Cancle
             // 
-            this.btn_Cancle.Enabled = false;
-            this.btn_Cancle.Location = new System.Drawing.Point(681, 191);
-            this.btn_Cancle.Name = "btn_Cancle";
-            this.btn_Cancle.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancle.TabIndex = 17;
-            this.btn_Cancle.Text = "Cancle";
-            this.btn_Cancle.UseVisualStyleBackColor = true;
-            this.btn_Cancle.Click += new System.EventHandler(this.btn_Cancle_Click);
+            btn_Cancle.Enabled=false;
+            btn_Cancle.Location=new System.Drawing.Point(681, 191);
+            btn_Cancle.Name="btn_Cancle";
+            btn_Cancle.Size=new System.Drawing.Size(75, 23);
+            btn_Cancle.TabIndex=17;
+            btn_Cancle.Text="Cancle";
+            btn_Cancle.UseVisualStyleBackColor=true;
+            btn_Cancle.Click+=btn_Cancle_Click;
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Enabled = false;
-            this.btn_Edit.Location = new System.Drawing.Point(600, 191);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(75, 23);
-            this.btn_Edit.TabIndex = 16;
-            this.btn_Edit.Text = "Edit";
-            this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            btn_Edit.Enabled=false;
+            btn_Edit.Location=new System.Drawing.Point(600, 191);
+            btn_Edit.Name="btn_Edit";
+            btn_Edit.Size=new System.Drawing.Size(75, 23);
+            btn_Edit.TabIndex=16;
+            btn_Edit.Text="Edit";
+            btn_Edit.UseVisualStyleBackColor=true;
+            btn_Edit.Click+=btn_Edit_Click;
             // 
             // btn_Clear
             // 
-            this.btn_Clear.Location = new System.Drawing.Point(519, 191);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_Clear.TabIndex = 15;
-            this.btn_Clear.Text = "Clear";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            btn_Clear.Location=new System.Drawing.Point(519, 191);
+            btn_Clear.Name="btn_Clear";
+            btn_Clear.Size=new System.Drawing.Size(75, 23);
+            btn_Clear.TabIndex=15;
+            btn_Clear.Text="Clear";
+            btn_Clear.UseVisualStyleBackColor=true;
+            btn_Clear.Click+=btn_Clear_Click;
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(438, 191);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 14;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            btn_Save.Location=new System.Drawing.Point(438, 191);
+            btn_Save.Name="btn_Save";
+            btn_Save.Size=new System.Drawing.Size(75, 23);
+            btn_Save.TabIndex=14;
+            btn_Save.Text="Save";
+            btn_Save.UseVisualStyleBackColor=true;
+            btn_Save.Click+=btn_Save_Click;
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(160, 76);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(318, 23);
-            this.txtContact.TabIndex = 13;
+            txtContact.Location=new System.Drawing.Point(160, 76);
+            txtContact.Name="txtContact";
+            txtContact.Size=new System.Drawing.Size(318, 23);
+            txtContact.TabIndex=13;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Search";
+            label2.AutoSize=true;
+            label2.Location=new System.Drawing.Point(67, 195);
+            label2.Name="label2";
+            label2.Size=new System.Drawing.Size(42, 15);
+            label2.TabIndex=12;
+            label2.Text="Search";
             // 
             // searchValue
             // 
-            this.searchValue.Location = new System.Drawing.Point(114, 192);
-            this.searchValue.Name = "searchValue";
-            this.searchValue.Size = new System.Drawing.Size(318, 23);
-            this.searchValue.TabIndex = 11;
+            searchValue.Location=new System.Drawing.Point(114, 192);
+            searchValue.Name="searchValue";
+            searchValue.Size=new System.Drawing.Size(318, 23);
+            searchValue.TabIndex=11;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Contact";
+            label1.AutoSize=true;
+            label1.Location=new System.Drawing.Point(67, 79);
+            label1.Name="label1";
+            label1.Size=new System.Drawing.Size(49, 15);
+            label1.TabIndex=10;
+            label1.Text="Contact";
             // 
             // ep
             // 
-            this.ep.ContainerControl = this;
+            ep.ContainerControl=this;
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
+            contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem });
+            contextMenuStrip1.Name="contextMenuStrip1";
+            contextMenuStrip1.Size=new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            editToolStripMenuItem.Name="editToolStripMenuItem";
+            editToolStripMenuItem.Size=new System.Drawing.Size(107, 22);
+            editToolStripMenuItem.Text="Edit";
+            editToolStripMenuItem.Click+=editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            deleteToolStripMenuItem.Name="deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size=new System.Drawing.Size(107, 22);
+            deleteToolStripMenuItem.Text="Delete";
+            deleteToolStripMenuItem.Click+=deleteToolStripMenuItem_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Email";
+            label3.AutoSize=true;
+            label3.Location=new System.Drawing.Point(67, 112);
+            label3.Name="label3";
+            label3.Size=new System.Drawing.Size(36, 15);
+            label3.TabIndex=10;
+            label3.Text="Email";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(160, 109);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(318, 23);
-            this.txtEmail.TabIndex = 13;
+            txtEmail.Location=new System.Drawing.Point(160, 109);
+            txtEmail.Name="txtEmail";
+            txtEmail.Size=new System.Drawing.Size(318, 23);
+            txtEmail.TabIndex=13;
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Location = new System.Drawing.Point(160, 41);
-            this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(318, 23);
-            this.txtSupplier.TabIndex = 21;
+            txtSupplier.Location=new System.Drawing.Point(160, 41);
+            txtSupplier.Name="txtSupplier";
+            txtSupplier.Size=new System.Drawing.Size(318, 23);
+            txtSupplier.TabIndex=21;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 15);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Supplier name";
+            label4.AutoSize=true;
+            label4.Location=new System.Drawing.Point(67, 44);
+            label4.Name="label4";
+            label4.Size=new System.Drawing.Size(83, 15);
+            label4.TabIndex=20;
+            label4.Text="Supplier name";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 15);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Supplier Details";
+            label5.AutoSize=true;
+            label5.Location=new System.Drawing.Point(67, 10);
+            label5.Name="label5";
+            label5.Size=new System.Drawing.Size(88, 15);
+            label5.TabIndex=22;
+            label5.Text="Supplier Details";
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(502, 112);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(254, 51);
-            this.textBoxDescription.TabIndex = 23;
+            textBoxDescription.Location=new System.Drawing.Point(502, 112);
+            textBoxDescription.Multiline=true;
+            textBoxDescription.Name="textBoxDescription";
+            textBoxDescription.Size=new System.Drawing.Size(254, 51);
+            textBoxDescription.TabIndex=23;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(502, 41);
-            this.textBoxAddress.Multiline = true;
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(254, 51);
-            this.textBoxAddress.TabIndex = 24;
+            textBoxAddress.Location=new System.Drawing.Point(502, 41);
+            textBoxAddress.Multiline=true;
+            textBoxAddress.Name="textBoxAddress";
+            textBoxAddress.Size=new System.Drawing.Size(254, 51);
+            textBoxAddress.TabIndex=24;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(502, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Description";
+            label6.AutoSize=true;
+            label6.Location=new System.Drawing.Point(502, 94);
+            label6.Name="label6";
+            label6.Size=new System.Drawing.Size(67, 15);
+            label6.TabIndex=25;
+            label6.Text="Description";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(502, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 15);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Address";
+            label7.AutoSize=true;
+            label7.Location=new System.Drawing.Point(502, 23);
+            label7.Name="label7";
+            label7.Size=new System.Drawing.Size(49, 15);
+            label7.TabIndex=26;
+            label7.Text="Address";
+            // 
+            // btn_Print
+            // 
+            btn_Print.Location=new System.Drawing.Point(681, 10);
+            btn_Print.Name="btn_Print";
+            btn_Print.Size=new System.Drawing.Size(75, 23);
+            btn_Print.TabIndex=27;
+            btn_Print.Text="Print";
+            btn_Print.UseVisualStyleBackColor=true;
+            btn_Print.Click+=btn_Print_Click;
             // 
             // FormSupplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxAddress);
-            this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtSupplier);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvSupplier);
-            this.Controls.Add(this.btn_Cancle);
-            this.Controls.Add(this.btn_Edit);
-            this.Controls.Add(this.btn_Clear);
-            this.Controls.Add(this.btn_Save);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtContact);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.searchValue);
-            this.Controls.Add(this.label1);
-            this.Name = "FormSupplier";
-            this.Text = "FormSupplier";
-            this.Load += new System.EventHandler(this.FormSupplier_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(800, 450);
+            ContextMenuStrip=contextMenuStrip1;
+            Controls.Add(btn_Print);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(textBoxAddress);
+            Controls.Add(textBoxDescription);
+            Controls.Add(label5);
+            Controls.Add(txtSupplier);
+            Controls.Add(label4);
+            Controls.Add(panel1);
+            Controls.Add(dgvSupplier);
+            Controls.Add(btn_Cancle);
+            Controls.Add(btn_Edit);
+            Controls.Add(btn_Clear);
+            Controls.Add(btn_Save);
+            Controls.Add(txtEmail);
+            Controls.Add(txtContact);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(searchValue);
+            Controls.Add(label1);
+            Name="FormSupplier";
+            Text="FormSupplier";
+            Load+=FormSupplier_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvSupplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ep).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -317,5 +327,7 @@ namespace Accounting01.SupplierAndCustomer
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Button btn_Print;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -83,7 +83,7 @@ namespace Accounting01.SupplierAndCustomer
                 }
             }
 
-            string query = string.Format("Insert into Supplier (SupplierName,ContactNo,Email,Address,Description) values('{0}','{1}','{2}','{3}','{4}');", txtSupplier.Text.Trim(),txtContact.Text.Trim(), txtEmail.Text.Trim(), textBoxAddress.Text.Trim(), textBoxDescription.Text.Trim());
+            string query = string.Format("Insert into Supplier (SupplierName,ContactNo,Email,Address,Description) values('{0}','{1}','{2}','{3}','{4}');", txtSupplier.Text.Trim(), txtContact.Text.Trim(), txtEmail.Text.Trim(), textBoxAddress.Text.Trim(), textBoxDescription.Text.Trim());
             bool result = DatabaseAccess.Insert(query);
             if (result)
             {
@@ -154,11 +154,11 @@ namespace Accounting01.SupplierAndCustomer
                 }
             }
 
-            string query = string.Format("Update Supplier set SupplierName = '{0}' ,ContactNo = '{1}', Email= '{2}',Address='{3}', Description = '{4}' where SupplierID = '{5}';", 
-                txtSupplier.Text.Trim(), 
+            string query = string.Format("Update Supplier set SupplierName = '{0}' ,ContactNo = '{1}', Email= '{2}',Address='{3}', Description = '{4}' where SupplierID = '{5}';",
+                txtSupplier.Text.Trim(),
                 txtContact.Text.Trim(),
-                txtEmail.Text.Trim(), 
-                textBoxAddress.Text.Trim(), 
+                txtEmail.Text.Trim(),
+                textBoxAddress.Text.Trim(),
                 textBoxDescription.Text.Trim(),
                 Convert.ToString(dgvSupplier.CurrentRow.Cells[0].Value).Trim()
             );
@@ -274,6 +274,11 @@ namespace Accounting01.SupplierAndCustomer
                 }
             }
 
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            Report.SupplierReport supplierReport = new Report.SupplierReport();
         }
     }
 }

@@ -238,8 +238,8 @@ namespace Accounting01.Purchase
                     {
                         txtCustomer.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[1].Value).Trim();
                         txtContact.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[2].Value).Trim();
-                        textBoxAddress.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[3].Value).Trim();
-                        txtEmail.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[4].Value).Trim();
+                        textBoxAddress.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[4].Value).Trim();
+                        txtEmail.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[3].Value).Trim();
                         textBoxDescription.Text = Convert.ToString(dgvCustomer.CurrentRow.Cells[5].Value).Trim();
                         EnableComponents();
                     }
