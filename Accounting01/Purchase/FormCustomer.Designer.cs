@@ -29,267 +29,276 @@ namespace Accounting01.Purchase
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label6 = new System.Windows.Forms.Label();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.btn_Cancle = new System.Windows.Forms.Button();
-            this.btn_Edit = new System.Windows.Forms.Button();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.txtContact = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.searchValue = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.contextMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
-            this.SuspendLayout();
+            components=new System.ComponentModel.Container();
+            label7=new System.Windows.Forms.Label();
+            textBoxAddress=new System.Windows.Forms.TextBox();
+            textBoxDescription=new System.Windows.Forms.TextBox();
+            label5=new System.Windows.Forms.Label();
+            txtCustomer=new System.Windows.Forms.TextBox();
+            label4=new System.Windows.Forms.Label();
+            txtEmail=new System.Windows.Forms.TextBox();
+            label3=new System.Windows.Forms.Label();
+            deleteToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            editToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            label6=new System.Windows.Forms.Label();
+            contextMenuStrip=new System.Windows.Forms.ContextMenuStrip(components);
+            dgvCustomer=new System.Windows.Forms.DataGridView();
+            btn_Cancle=new System.Windows.Forms.Button();
+            btn_Edit=new System.Windows.Forms.Button();
+            btn_Clear=new System.Windows.Forms.Button();
+            btn_Save=new System.Windows.Forms.Button();
+            txtContact=new System.Windows.Forms.TextBox();
+            label2=new System.Windows.Forms.Label();
+            searchValue=new System.Windows.Forms.TextBox();
+            label1=new System.Windows.Forms.Label();
+            ep=new System.Windows.Forms.ErrorProvider(components);
+            panel1=new System.Windows.Forms.Panel();
+            btn_Print=new System.Windows.Forms.Button();
+            contextMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ep).BeginInit();
+            SuspendLayout();
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(491, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 15);
-            this.label7.TabIndex = 45;
-            this.label7.Text = "Address";
+            label7.AutoSize=true;
+            label7.Location=new System.Drawing.Point(491, 24);
+            label7.Name="label7";
+            label7.Size=new System.Drawing.Size(49, 15);
+            label7.TabIndex=45;
+            label7.Text="Address";
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(491, 42);
-            this.textBoxAddress.Multiline = true;
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(254, 51);
-            this.textBoxAddress.TabIndex = 43;
+            textBoxAddress.Location=new System.Drawing.Point(491, 42);
+            textBoxAddress.Multiline=true;
+            textBoxAddress.Name="textBoxAddress";
+            textBoxAddress.Size=new System.Drawing.Size(254, 51);
+            textBoxAddress.TabIndex=43;
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(491, 113);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(254, 51);
-            this.textBoxDescription.TabIndex = 42;
+            textBoxDescription.Location=new System.Drawing.Point(491, 113);
+            textBoxDescription.Multiline=true;
+            textBoxDescription.Name="textBoxDescription";
+            textBoxDescription.Size=new System.Drawing.Size(254, 51);
+            textBoxDescription.TabIndex=42;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 15);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Customer Details";
+            label5.AutoSize=true;
+            label5.Location=new System.Drawing.Point(56, 11);
+            label5.Name="label5";
+            label5.Size=new System.Drawing.Size(97, 15);
+            label5.TabIndex=41;
+            label5.Text="Customer Details";
             // 
             // txtCustomer
             // 
-            this.txtCustomer.Location = new System.Drawing.Point(149, 42);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(318, 23);
-            this.txtCustomer.TabIndex = 40;
+            txtCustomer.Location=new System.Drawing.Point(149, 42);
+            txtCustomer.Name="txtCustomer";
+            txtCustomer.Size=new System.Drawing.Size(318, 23);
+            txtCustomer.TabIndex=40;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 15);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Customer name";
+            label4.AutoSize=true;
+            label4.Location=new System.Drawing.Point(56, 45);
+            label4.Name="label4";
+            label4.Size=new System.Drawing.Size(92, 15);
+            label4.TabIndex=39;
+            label4.Text="Customer name";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(149, 110);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(318, 23);
-            this.txtEmail.TabIndex = 32;
+            txtEmail.Location=new System.Drawing.Point(149, 110);
+            txtEmail.Name="txtEmail";
+            txtEmail.Size=new System.Drawing.Size(318, 23);
+            txtEmail.TabIndex=32;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Email";
+            label3.AutoSize=true;
+            label3.Location=new System.Drawing.Point(56, 113);
+            label3.Name="label3";
+            label3.Size=new System.Drawing.Size(36, 15);
+            label3.TabIndex=28;
+            label3.Text="Email";
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            deleteToolStripMenuItem.Name="deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size=new System.Drawing.Size(107, 22);
+            deleteToolStripMenuItem.Text="Delete";
+            deleteToolStripMenuItem.Click+=deleteToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            editToolStripMenuItem.Name="editToolStripMenuItem";
+            editToolStripMenuItem.Size=new System.Drawing.Size(107, 22);
+            editToolStripMenuItem.Text="Edit";
+            editToolStripMenuItem.Click+=editToolStripMenuItem_Click;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(491, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Description";
+            label6.AutoSize=true;
+            label6.Location=new System.Drawing.Point(491, 95);
+            label6.Name="label6";
+            label6.Size=new System.Drawing.Size(67, 15);
+            label6.TabIndex=44;
+            label6.Text="Description";
             // 
             // contextMenuStrip
             // 
-            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(108, 48);
+            contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem });
+            contextMenuStrip.Name="contextMenuStrip1";
+            contextMenuStrip.Size=new System.Drawing.Size(108, 48);
             // 
             // dgvCustomer
             // 
-            this.dgvCustomer.AllowUserToAddRows = false;
-            this.dgvCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgvCustomer.Location = new System.Drawing.Point(56, 226);
-            this.dgvCustomer.MultiSelect = false;
-            this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.ReadOnly = true;
-            this.dgvCustomer.RowTemplate.Height = 25;
-            this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(666, 213);
-            this.dgvCustomer.TabIndex = 37;
+            dgvCustomer.AllowUserToAddRows=false;
+            dgvCustomer.BackgroundColor=System.Drawing.SystemColors.ButtonHighlight;
+            dgvCustomer.ColumnHeadersHeightSizeMode=System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCustomer.GridColor=System.Drawing.SystemColors.ButtonShadow;
+            dgvCustomer.Location=new System.Drawing.Point(56, 226);
+            dgvCustomer.MultiSelect=false;
+            dgvCustomer.Name="dgvCustomer";
+            dgvCustomer.ReadOnly=true;
+            dgvCustomer.RowTemplate.Height=25;
+            dgvCustomer.SelectionMode=System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvCustomer.Size=new System.Drawing.Size(666, 213);
+            dgvCustomer.TabIndex=37;
             // 
             // btn_Cancle
             // 
-            this.btn_Cancle.Enabled = false;
-            this.btn_Cancle.Location = new System.Drawing.Point(670, 192);
-            this.btn_Cancle.Name = "btn_Cancle";
-            this.btn_Cancle.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancle.TabIndex = 36;
-            this.btn_Cancle.Text = "Cancle";
-            this.btn_Cancle.UseVisualStyleBackColor = true;
-            this.btn_Cancle.Click += new System.EventHandler(this.btn_Cancle_Click);
+            btn_Cancle.Enabled=false;
+            btn_Cancle.Location=new System.Drawing.Point(670, 192);
+            btn_Cancle.Name="btn_Cancle";
+            btn_Cancle.Size=new System.Drawing.Size(75, 23);
+            btn_Cancle.TabIndex=36;
+            btn_Cancle.Text="Cancle";
+            btn_Cancle.UseVisualStyleBackColor=true;
+            btn_Cancle.Click+=btn_Cancle_Click;
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Enabled = false;
-            this.btn_Edit.Location = new System.Drawing.Point(589, 192);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(75, 23);
-            this.btn_Edit.TabIndex = 35;
-            this.btn_Edit.Text = "Edit";
-            this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            btn_Edit.Enabled=false;
+            btn_Edit.Location=new System.Drawing.Point(589, 192);
+            btn_Edit.Name="btn_Edit";
+            btn_Edit.Size=new System.Drawing.Size(75, 23);
+            btn_Edit.TabIndex=35;
+            btn_Edit.Text="Edit";
+            btn_Edit.UseVisualStyleBackColor=true;
+            btn_Edit.Click+=btn_Edit_Click;
             // 
             // btn_Clear
             // 
-            this.btn_Clear.Location = new System.Drawing.Point(508, 192);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_Clear.TabIndex = 34;
-            this.btn_Clear.Text = "Clear";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            btn_Clear.Location=new System.Drawing.Point(508, 192);
+            btn_Clear.Name="btn_Clear";
+            btn_Clear.Size=new System.Drawing.Size(75, 23);
+            btn_Clear.TabIndex=34;
+            btn_Clear.Text="Clear";
+            btn_Clear.UseVisualStyleBackColor=true;
+            btn_Clear.Click+=btn_Clear_Click;
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(427, 192);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 33;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            btn_Save.Location=new System.Drawing.Point(427, 192);
+            btn_Save.Name="btn_Save";
+            btn_Save.Size=new System.Drawing.Size(75, 23);
+            btn_Save.TabIndex=33;
+            btn_Save.Text="Save";
+            btn_Save.UseVisualStyleBackColor=true;
+            btn_Save.Click+=btn_Save_Click;
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(149, 77);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(318, 23);
-            this.txtContact.TabIndex = 31;
+            txtContact.Location=new System.Drawing.Point(149, 77);
+            txtContact.Name="txtContact";
+            txtContact.Size=new System.Drawing.Size(318, 23);
+            txtContact.TabIndex=31;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 196);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Search";
+            label2.AutoSize=true;
+            label2.Location=new System.Drawing.Point(56, 196);
+            label2.Name="label2";
+            label2.Size=new System.Drawing.Size(42, 15);
+            label2.TabIndex=30;
+            label2.Text="Search";
             // 
             // searchValue
             // 
-            this.searchValue.Location = new System.Drawing.Point(103, 193);
-            this.searchValue.Name = "searchValue";
-            this.searchValue.Size = new System.Drawing.Size(318, 23);
-            this.searchValue.TabIndex = 29;
+            searchValue.Location=new System.Drawing.Point(103, 193);
+            searchValue.Name="searchValue";
+            searchValue.Size=new System.Drawing.Size(318, 23);
+            searchValue.TabIndex=29;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Contact";
+            label1.AutoSize=true;
+            label1.Location=new System.Drawing.Point(56, 80);
+            label1.Name="label1";
+            label1.Size=new System.Drawing.Size(49, 15);
+            label1.TabIndex=27;
+            label1.Text="Contact";
             // 
             // ep
             // 
-            this.ep.ContainerControl = this;
+            ep.ContainerControl=this;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(56, 160);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(411, 21);
-            this.panel1.TabIndex = 38;
+            panel1.BackColor=System.Drawing.SystemColors.ActiveCaption;
+            panel1.Location=new System.Drawing.Point(56, 160);
+            panel1.Name="panel1";
+            panel1.Size=new System.Drawing.Size(411, 21);
+            panel1.TabIndex=38;
+            // 
+            // btn_Print
+            // 
+            btn_Print.Location=new System.Drawing.Point(670, 7);
+            btn_Print.Name="btn_Print";
+            btn_Print.Size=new System.Drawing.Size(75, 23);
+            btn_Print.TabIndex=46;
+            btn_Print.Text="Print";
+            btn_Print.UseVisualStyleBackColor=true;
+            btn_Print.Click+=btn_Print_Click;
             // 
             // FormCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ContextMenuStrip = this.contextMenuStrip;
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxAddress);
-            this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtCustomer);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dgvCustomer);
-            this.Controls.Add(this.btn_Cancle);
-            this.Controls.Add(this.btn_Edit);
-            this.Controls.Add(this.btn_Clear);
-            this.Controls.Add(this.btn_Save);
-            this.Controls.Add(this.txtContact);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.searchValue);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
-            this.Name = "FormCustomer";
-            this.Text = "FormCustomer";
-            this.Load += new System.EventHandler(this.FormCustomer_Load);
-            this.contextMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(800, 450);
+            ContextMenuStrip=contextMenuStrip;
+            Controls.Add(btn_Print);
+            Controls.Add(label7);
+            Controls.Add(textBoxAddress);
+            Controls.Add(textBoxDescription);
+            Controls.Add(label5);
+            Controls.Add(txtCustomer);
+            Controls.Add(label4);
+            Controls.Add(txtEmail);
+            Controls.Add(label3);
+            Controls.Add(label6);
+            Controls.Add(dgvCustomer);
+            Controls.Add(btn_Cancle);
+            Controls.Add(btn_Edit);
+            Controls.Add(btn_Clear);
+            Controls.Add(btn_Save);
+            Controls.Add(txtContact);
+            Controls.Add(label2);
+            Controls.Add(searchValue);
+            Controls.Add(label1);
+            Controls.Add(panel1);
+            Name="FormCustomer";
+            Text="FormCustomer";
+            Load+=FormCustomer_Load;
+            contextMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvCustomer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ep).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -317,5 +326,6 @@ namespace Accounting01.Purchase
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Print;
     }
 }

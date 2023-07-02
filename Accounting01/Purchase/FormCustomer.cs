@@ -135,7 +135,8 @@ namespace Accounting01.Purchase
         }
 
         String checkError = "";
-        private void checkTextValue(TextBox textValue) {
+        private void checkTextValue(TextBox textValue)
+        {
             if (textValue.Text.Trim().Length == 0)
             {
                 ep.SetError(textValue, "Please Enter Customer");
@@ -151,7 +152,8 @@ namespace Accounting01.Purchase
             checkTextValue(txtContact);
             checkTextValue(txtCustomer);
             checkTextValue(txtEmail);
-            if (checkError == "Yes") {
+            if (checkError == "Yes")
+            {
                 return;
             }
 
@@ -288,6 +290,11 @@ namespace Accounting01.Purchase
                     MessageBox.Show("List is Empty ");
                 }
             }
+
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
 
         }
     }
